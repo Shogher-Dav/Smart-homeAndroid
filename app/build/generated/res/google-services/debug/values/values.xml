@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">285484344868-0vd0albqhjgl3qp4j5inu58c5thqq93a.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://smarthome-f7078.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">285484344868</string>
+    <string name="google_api_key" translatable="false">AIzaSyCQ7Pf2Jzfn1pgWBkER6-BMzpunxouMcVk</string>
+    <string name="google_app_id" translatable="false">1:285484344868:android:9b537403cc3f9ff9</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCQ7Pf2Jzfn1pgWBkER6-BMzpunxouMcVk</string>
+    <string name="google_storage_bucket" translatable="false">smarthome-f7078.appspot.com</string>
+    <string name="project_id" translatable="false">smarthome-f7078</string>
+</resources>

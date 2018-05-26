@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d0d1ed"
+    tools:context=".SensorsPage">
+
+    <ImageView
+        android:id="@+id/volveoff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="47dp"
+        android:visibility="visible"
+        app:srcCompat="@drawable/volveoff"
+        />
+
+    <ImageView
+        android:id="@+id/volveon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/volveoff"
+        android:layout_alignTop="@+id/volveoff"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/volveon"
+       />
+
+    <ImageView
+        android:id="@+id/volveoff1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/volveon1"
+        android:layout_marginStart="87dp"
+        android:layout_toEndOf="@+id/volveoff"
+        android:visibility="visible"
+        app:srcCompat="@drawable/volveoff"
+         />
+
+    <ImageView
+        android:id="@+id/volveon1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/volveoff1"
+        android:layout_alignTop="@+id/volveoff"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/volveon"
+         />
+
+    <TextView
+        android:id="@+id/kitchen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/volveoff"
+        android:layout_below="@+id/volveoff1"
+        android:layout_marginTop="25dp"
+        android:text="Kitchen" />
+
+    <TextView
+        android:id="@+id/bathroom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/kitchen"
+        android:layout_alignBottom="@+id/kitchen"
+        android:layout_alignEnd="@+id/volveoff1"
+        android:text="Bathroom" />
+
+    <ImageView
+        android:id="@+id/fireoff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/kitchen"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="13dp"
+        android:visibility="visible"
+        app:srcCompat="@drawable/fireoff" />
+
+    <ImageView
+        android:id="@+id/fireon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/fireoff"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/fireoff" />
+
+    <ImageView
+        android:id="@+id/wateroff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/fireoff"
+        android:layout_toStartOf="@+id/volveon1"
+        android:visibility="visible"
+        app:srcCompat="@drawable/wateroff" />
+
+    <ImageView
+        android:id="@+id/wateron"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/volveon1"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/wateron" />
+
+    <ImageView
+        android:id="@+id/gazoff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/gazon"
+        android:layout_toEndOf="@+id/bathroom"
+        android:visibility="visible"
+        app:srcCompat="@drawable/gasoff" />
+
+    <ImageView
+        android:id="@+id/gazon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/gazoff"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/gason" />
+
+    <TextView
+        android:id="@+id/fire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/kitchen"
+        android:layout_below="@+id/fireoff"
+        android:layout_marginTop="43dp"
+        android:text="Fire" />
+
+    <TextView
+        android:id="@+id/water"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/fire"
+        android:layout_alignBottom="@+id/fire"
+        android:layout_centerHorizontal="true"
+        android:text="Water" />
+
+    <TextView
+        android:id="@+id/gas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/water"
+        android:layout_alignBottom="@+id/water"
+        android:layout_alignStart="@+id/gazoff"
+        android:layout_marginStart="17dp"
+        android:text="Gas" />
+</RelativeLayout>

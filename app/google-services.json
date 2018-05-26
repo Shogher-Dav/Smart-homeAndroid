@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "285484344868",
+    "firebase_url": "https://smarthome-f7078.firebaseio.com",
+    "project_id": "smarthome-f7078",
+    "storage_bucket": "smarthome-f7078.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285484344868:android:9b537403cc3f9ff9",
+        "android_client_info": {
+          "package_name": "com.example.user.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285484344868-5qd533p7ao296c5coe3bfi4uihoqq9df.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.myapplication",
+            "certificate_hash": "a75a49c1e93fc044f0c1eb814292d451bafb4cff"
+          }
+        },
+        {
+          "client_id": "285484344868-0vd0albqhjgl3qp4j5inu58c5thqq93a.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "285484344868-0vd0albqhjgl3qp4j5inu58c5thqq93a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQ7Pf2Jzfn1pgWBkER6-BMzpunxouMcVk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285484344868-0vd0albqhjgl3qp4j5inu58c5thqq93a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285484344868:android:d7a63a6d1464d08d",
+        "android_client_info": {
+          "package_name": "com.exee.laura.sh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285484344868-g24johummdcst9cd33o0g0hbuamdstl2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.exee.laura.sh",
+            "certificate_hash": "a75a49c1e93fc044f0c1eb814292d451bafb4cff"
+          }
+        },
+        {
+          "client_id": "285484344868-0vd0albqhjgl3qp4j5inu58c5thqq93a.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "285484344868-0vd0albqhjgl3qp4j5inu58c5thqq93a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQ7Pf2Jzfn1pgWBkER6-BMzpunxouMcVk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285484344868-0vd0albqhjgl3qp4j5inu58c5thqq93a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
