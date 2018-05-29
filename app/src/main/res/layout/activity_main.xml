@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#888888"
-    tools:context="com.example.user.myapplication.MainActivity"
-   android:orientation="vertical"
     android:gravity="center"
-    >
+    android:orientation="vertical"
+    tools:context="com.example.user.myapplication.MainActivity">
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="200dp"
@@ -23,25 +23,26 @@
         android:hint="Username"
         android:inputType="textPersonName"
         android:textColorHint="#ffffff"
-        android:textSize="18dp" />
+        android:textSize="18dp"
+        android:layout_marginTop="10dp"/>
 
     <EditText
         android:id="@+id/password"
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:hint="Password"
         android:background="#11000000"
+        android:hint="Password"
         android:inputType="textPersonName"
-        android:textColorHint="#ffffff" />
+        android:textColorHint="#ffffff"
+        android:layout_marginTop="10dp"/>
 
     <Button
         android:id="@+id/login"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:background="@drawable/login"
-        android:text="Sigh In"
-        android:textColor="#fff"
         android:onClick="onClick"
-
-        />
+        android:text="Sign In"
+        android:textColor="#fff"
+        android:layout_marginTop="10dp"/>
 </LinearLayout>

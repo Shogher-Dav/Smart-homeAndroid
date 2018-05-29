@@ -42,6 +42,7 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         e = (EditText) findViewById(R.id.email);
         p = (EditText) findViewById(R.id.password);
+        getSupportActionBar().setTitle("Smart Home");
         database = FirebaseDatabase.getInstance();
         SharedPreferences settings = getSharedPreferences("sh1", 0);
         editor = settings.edit();
