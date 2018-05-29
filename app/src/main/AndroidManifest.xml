@@ -18,16 +18,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomePage" />
-        <activity android:name=".LightPage" />
-        <activity android:name=".CameraPage" />
-        <activity android:name=".SensorsPage" />
-        <activity android:name=".TemperaturePage" />
+        <activity android:name=".HomePage"
+            android:label="Smart Home"/>
+        <activity android:name=".LightPage"
+            android:label="Lights"/>
+        <activity android:name=".CameraPage"
+            android:label="Camera"/>
+        <activity android:name=".SensorsPage"
+            android:label="Sensors"/>
+        <activity android:name=".TemperaturePage"
+            android:label="ThermoControler"/>
         <activity
             android:name=".Custom"
             android:theme="@style/dialog" />
         <activity android:name=".BaseActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:label="Welcome to Smart Home"/>
     </application>
 
 </manifest>

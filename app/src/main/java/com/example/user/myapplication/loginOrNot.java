@@ -20,11 +20,11 @@ public class loginOrNot extends AppCompatActivity {
       //Toast.makeText(this,prefEmail+" "+prefPassword,Toast.LENGTH_SHORT).show();
         if(!prefEmail.isEmpty() && !prefPassword.isEmpty()){
             Intent i = new Intent(loginOrNot.this, HomePage.class);
-            i.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
             startActivity(i);
             finish();
         }else{
             Intent i = new Intent(loginOrNot.this, MainActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
             startActivity(i);
             finish();
         }
