@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Laura\\Downloads\\MyApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xlarge-land-v4\\values-xlarge-land-v4.xml",
+            "outputFile": "C:\\Users\\User\\AndroidStudioProjects\\Smart-homeAndroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xlarge-land-v4\\values-xlarge-land-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Laura\\.gradle\\wrapper\\dists\\gradle-3.3-all\\caches\\transforms-1\\files-1.1\\ambilwarna-2.0.1.aar\\249e8663786edc3b90c0d6f345a71007\\res\\values-xlarge-land\\values-xlarge-land.xml",
+                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\ambilwarna-2.0.1.aar\\ccc19639438bd060cc169c84af3563fe\\res\\values-xlarge-land\\values-xlarge-land.xml",
                     "from": {
                         "startLines": "4,5",
                         "startColumns": "4,4",
