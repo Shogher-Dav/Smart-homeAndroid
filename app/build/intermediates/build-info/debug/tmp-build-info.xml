@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86"
+    api-level="23"
+    build-mode="FULL"
+    density="420dpi"
+    format="10"
+    plugin-version="3.1.2"
+    timestamp="1527636896684"
+    token="6693457184901532075"
+    verifier="FULL_BUILD_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="17131" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="1571" />
+    <task
+        name="verifier"
+        duration="628" />
+
+    <artifact
+        location="C:\Users\User\AndroidStudioProjects\Smart-homeAndroid\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+        type="RESOURCES" />
+
+</instant-run>
