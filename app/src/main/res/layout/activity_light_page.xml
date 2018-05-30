@@ -7,117 +7,77 @@
     android:background="#d0d1ed"
     tools:context=".LightPage">
 
-
-
     <ImageView
-        android:id="@+id/lampOff"
+        android:id="@+id/kitchen_light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/lampOn"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="14dp"
         android:src="@drawable/lamp1"
         android:visibility="visible" />
 
-    <ImageView
-        android:id="@+id/lampOn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/lampOff"
-        android:layout_marginEnd="17dp"
-        android:src="@drawable/yellowlamp"
-        android:visibility="invisible" />
-
     <TextView
         android:id="@+id/kitchen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/lampOn"
+        android:layout_alignBottom="@+id/kitchen_light"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="17dp"
         android:layout_marginStart="56dp"
         android:text="Kitchen" />
 
     <ImageView
-        android:id="@+id/lampOff1"
+        android:id="@+id/bedroom_light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/lampOff"
-        android:layout_below="@+id/lampOff"
+        android:layout_alignStart="@+id/kitchen_light"
+        android:layout_below="@+id/kitchen_light"
         android:layout_marginTop="17dp"
-        android:src="@drawable/lamp1" />
-
-    <ImageView
-        android:id="@+id/lampOn1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/lampOff1"
-        android:layout_alignTop="@+id/lampOff1"
-        android:src="@drawable/yellowlamp"
-        android:visibility="invisible" />
+        android:src="@drawable/lamp1"/>
 
     <TextView
         android:id="@+id/bedroom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/lampOff1"
+        android:layout_alignBottom="@+id/bedroom_light"
         android:layout_alignStart="@+id/kitchen"
         android:layout_marginBottom="16dp"
         android:text="Bedroom" />
 
-
     <ImageView
-        android:id="@+id/lampOff2"
+        android:id="@+id/living_light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/lampOff1"
-        android:layout_below="@+id/lampOff1"
+        android:layout_alignStart="@+id/bedroom_light"
+        android:layout_below="@+id/bedroom_light"
         android:layout_marginTop="22dp"
         android:src="@drawable/lamp1" />
-
-    <ImageView
-        android:id="@+id/lampOn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/lampOff2"
-        android:layout_alignTop="@+id/lampOff2"
-        android:src="@drawable/yellowlamp"
-        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/livingroom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/lampOff2"
+        android:layout_alignBottom="@+id/living_light"
         android:layout_alignStart="@+id/bedroom"
         android:layout_marginBottom="9dp"
         android:text="Living room" />
 
     <ImageView
-        android:id="@+id/lampOff3"
+        android:id="@+id/bathroom_light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/lampOff2"
-        android:layout_alignTop="@+id/lampOn3"
+        android:layout_alignStart="@+id/living_light"
+        android:layout_below="@id/living_light"
+        android:layout_marginTop="22dp"
         android:src="@drawable/lamp1" />
-
-    <ImageView
-        android:id="@+id/lampOn3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/lampOff3"
-        android:layout_below="@+id/lampOff2"
-        android:layout_marginTop="28dp"
-        android:src="@drawable/yellowlamp"
-        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/bathroom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/livingroom"
-        android:layout_alignTop="@+id/lampOff3"
+        android:layout_alignTop="@+id/bathroom_light"
         android:layout_marginTop="22dp"
         android:text="Bathroom" />
 
@@ -128,26 +88,25 @@
         android:layout_alignTop="@+id/bathroom"
         android:layout_centerHorizontal="true"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/login"
         android:text="RGB" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/curtain_swich"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/lampOff3"
+        android:layout_alignEnd="@+id/bathroom_light"
         android:layout_below="@+id/rgbButton"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
         android:text="Switch" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/curtain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/switch1"
+        android:layout_alignBottom="@+id/curtain_swich"
         android:layout_alignEnd="@+id/kitchen"
         android:text="Curtain" />
-
-
 </RelativeLayout>

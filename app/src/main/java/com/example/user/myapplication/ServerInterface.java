@@ -22,4 +22,29 @@ public interface ServerInterface {
             @Path("end") String end,
             @Query("token") String token
     );
+
+    @GET("/api/light/{number}/{status}")
+    Call<JsonObject> setLight(
+            @Path("number") int number,
+            @Path("status") int status,
+            @Query("token") String token
+    );
+
+    @GET("/api/led/{number}/{status}")
+    Call<JsonObject> setLedColor(
+            @Path("number") int number,
+            @Path("status") int status,
+            @Query("token") String token
+    );
+
+    @GET("/api/led/random")
+    Call<JsonObject> changeRandomLed(
+            @Query("token") String token
+    );
+
+    @GET("/api/curtain/1/{status}")
+    Call<JsonObject> changeCurtainState(
+            @Path("status") int status,
+            @Query("token") String token
+    );
 }

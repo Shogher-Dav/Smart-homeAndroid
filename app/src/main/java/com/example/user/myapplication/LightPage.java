@@ -2,93 +2,136 @@ package com.example.user.myapplication;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.Switch;
+
+import com.google.gson.JsonObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class LightPage extends AppCompatActivity implements View.OnClickListener {
-    ImageView lampOn, lampOff, lampOn1, lampOff1;
-    Boolean c, b;
-    Button rgbButton;
-    Dialog mydialog;
-
+    private ImageView kitchen, bedroom, living, bathroom;
+    private Button rgbButton;
+    private Switch curtainSwitch;
+    private Dialog mydialog;
+    private Map<Integer, Integer> lightsStates = new HashMap<>();
+    private Drawable lightOff, lightOn;
+    public static final int STATE_OFF = 0;
+    public static final int STATE_ON = 1;
+    private  ServerInterface serverInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_light_page);
-        {
-            c = false;
-            b = false;
-            lampOn = (ImageView) findViewById(R.id.lampOn);
-            lampOff = (ImageView) findViewById(R.id.lampOff);
-            lampOn1 = (ImageView) findViewById(R.id.lampOn1);
-            lampOff1 = (ImageView) findViewById(R.id.lampOff1);
-            lampOn.setOnClickListener(this);
-            lampOff.setOnClickListener(this);
-            lampOn1.setOnClickListener(this);
-            lampOff1.setOnClickListener(this);
-            rgbButton=(Button)findViewById(R.id.rgbButton);
+        Retrofit retrofit = ApiFactory.getInstance().getRetrofit(HomePage.BASE_URL);
+        serverInterface = retrofit.create(ServerInterface.class);
 
-            rgbButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent rgbIntent = new Intent(view.getContext(), Custom.class);
-                    startActivity(rgbIntent);
-                }
-            });
+        initViews();
+    }
+
+    private void initViews() {
+        kitchen = findViewById(R.id.kitchen_light);
+        living = findViewById(R.id.living_light);
+        bedroom = findViewById(R.id.bedroom_light);
+        bathroom = findViewById(R.id.bathroom_light);
+        curtainSwitch = findViewById(R.id.curtain_swich);
+
+        kitchen.setOnClickListener(this);
+        bedroom.setOnClickListener(this);
+        bathroom.setOnClickListener(this);
+        living.setOnClickListener(this);
+        curtainSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                Call<JsonObject> call = serverInterface.changeCurtainState(compoundButton.isChecked() ? 1 : 0, HomePage.getUserToken());
+                Log.d("lalala", "request:  "  + call.request().url());
+                call.enqueue(new Callback<JsonObject>() {
+                    @Override
+                    public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                        Log.d("lalala", "response: "  + response.toString());
+                    }
+
+                    @Override
+                    public void onFailure(Call<JsonObject> call, Throwable t) {
+                        Log.d("lalala", "fail: "  + t.getStackTrace());
+                    }
+                });
+            }
+        });
+        rgbButton = findViewById(R.id.rgbButton);
+
+        lightOff = this.getResources().getDrawable(R.drawable.lamp1);
+        lightOn = this.getResources().getDrawable(R.drawable.yellowlamp);
+
+        rgbButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent rgbIntent = new Intent(view.getContext(), Custom.class);
+                startActivity(rgbIntent);
+            }
+        });
+
+        for (int i=0; i<4; i++) {
+            lightsStates.put(i, STATE_OFF);
         }
-
-
-
     }
 
 
     @Override
     public void onClick(View v) {
-      if(c) {
-           //miacvat e anjatvum e
-            lampOff.setVisibility(View.VISIBLE);
-            lampOn.setVisibility(View.INVISIBLE);
-               c=false;
-       }
-          else {
-           //anjatvat e mianum e
-            lampOn.setVisibility(View.VISIBLE);
-           lampOff.setVisibility(View.INVISIBLE);
-              c=true;
-         }
-//        if(b) {
-//            lampOff1.setVisibility(View.VISIBLE);
-//            lampOn1.setVisibility(View.INVISIBLE);
-//            b=false;
-//            c=false;
-//        }
-//        else {
-//            lampOn1.setVisibility(View.VISIBLE);
-//            lampOff1.setVisibility(View.INVISIBLE);
-//
-//            b=true;
-//            c=false;
-//
-//        }
         switch (v.getId()) {
-            case R.id.lampOn:
-                lampOn.setVisibility(View.INVISIBLE);
-                lampOff.setVisibility(View.VISIBLE);
-
-            case R.id.lampOff:
-                lampOn.setVisibility(View.VISIBLE);
-                lampOff.setVisibility(View.INVISIBLE);
-
-
+            case R.id.kitchen_light:
+                changeStateAndSendData(v, 0, v.isSelected());
+                break;
+            case R.id.bedroom_light:
+                changeStateAndSendData(v, 1, v.isSelected());
+                break;
+            case R.id.living_light:
+                changeStateAndSendData(v, 2, v.isSelected());
+                break;
+            case R.id.bathroom_light:
+               changeStateAndSendData(v, 3, v.isSelected());
         }
     }
-    public void myCustomAlertdialog(){
-        mydialog=new Dialog(LightPage.this);
-       // mydialog.addContentView(R.layout.activity_custom);
+
+    private void changeStateAndSendData(View view, int number, boolean isSelected) {
+        int state = isSelected ? 1 : 0;
+        view.setSelected(!isSelected);
+        ((ImageView)view).setImageDrawable(isSelected ? lightOff : lightOn);
+
+        Call<JsonObject> call = serverInterface.setLight(number, state, HomePage.getUserToken());
+        Log.d("lalala", "request:  "  + call.request().url());
+        call.enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                Log.d("lalala", "response: "  + response.toString());
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+                Log.d("lalala", "fail: "  + t.getStackTrace());
+            }
+        });
+    }
+
+    public void myCustomAlertdialog() {
+        mydialog = new Dialog(LightPage.this);
+        // mydialog.addContentView(R.layout.activity_custom);
         mydialog.setTitle("My custom dialog");
 
     }
