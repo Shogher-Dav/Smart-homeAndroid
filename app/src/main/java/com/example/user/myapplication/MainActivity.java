@@ -33,19 +33,26 @@ public class MainActivity extends BaseActivity {
     SharedPreferences.Editor editor;
     String check1, check2;
     Button login;
-    String prefEmail = "", prefPassword = "";
+    protected String prefEmail = "", prefPassword = "";
     private static final String TAG = "EmailPassword";
     private FirebaseAuth.AuthStateListener mAuthListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setTitle("Smart Home");
+
+        if (getIntent() != null && getIntent().getBooleanExtra("check", false)) {
+            prefEmail = "";
+            prefPassword = "";
+        }
         e = (EditText) findViewById(R.id.email);
         p = (EditText) findViewById(R.id.password);
-        getSupportActionBar().setTitle("Smart Home");
+
         database = FirebaseDatabase.getInstance();
         SharedPreferences settings = getSharedPreferences("sh1", 0);
         editor = settings.edit();
+
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -73,7 +80,7 @@ public class MainActivity extends BaseActivity {
                         Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithEmail:failed", task.getException());
-                            Toast.makeText(MainActivity.this, "Uncurrect email or password",
+                            Toast.makeText(MainActivity.this, "Incorrect email or password",
                                     Toast.LENGTH_SHORT).show();
                         }else if(task.isSuccessful()){
                             prefEmail = e.getText().toString();

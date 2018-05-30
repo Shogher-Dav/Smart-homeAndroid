@@ -4,29 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#d0d1ed">
+    android:background="#d0d1ed"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
 
     <TextView
         android:id="@+id/start_time"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         android:layout_marginTop="68dp"
-        android:textSize="15dp"
+        android:textSize="20dp"
         android:hint="Choose Start time"/>
 
     <TextView
         android:id="@+id/end_time"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_below="@id/start_time"
         android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal"
-        android:textSize="15dp"
+        android:gravity="center"
+        android:textSize="20dp"
         android:hint="Choose End time"/>
 
     <EditText
@@ -37,6 +39,7 @@
         android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
+        android:inputType="number"
         android:hint="Please enter prefered temperature"/>
 
     <EditText
@@ -47,6 +50,9 @@
         android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
+        android:inputType="number"
+        android:focusedByDefault="false"
+        android:defaultFocusHighlightEnabled="false"
         android:hint="Please enter the number of rooms"/>
 
     <Button
@@ -58,5 +64,6 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:background="@drawable/login"
+        android:defaultFocusHighlightEnabled="false"
         android:text="Ok" />
 </RelativeLayout>

@@ -40,9 +40,11 @@
         android:layout_marginTop="39dp"
         android:ems="10"
         android:hint="Password"
+
         android:background="#11000000"
         android:inputType="textPassword"
         android:drawableLeft="@drawable/ic_action_lock"
+
         android:textColorHint="#ffffff"
         android:layout_below="@+id/email"
         android:layout_alignStart="@+id/email" />
