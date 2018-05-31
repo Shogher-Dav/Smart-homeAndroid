@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- disabled state-->
+
+    <!-- pressed state / clicked state -->
+    <item
+        android:state_pressed="true"
+        android:drawable="@drawable/yellowlamp"
+        />
+    <item
+        android:drawable="@drawable/lamp1"
+        />
+</selector>
