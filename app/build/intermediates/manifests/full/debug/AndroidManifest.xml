@@ -35,16 +35,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.user.myapplication.HomePage" />
-        <activity android:name="com.example.user.myapplication.LightPage" />
-        <activity android:name="com.example.user.myapplication.CameraPage" />
-        <activity android:name="com.example.user.myapplication.SensorsPage" />
-        <activity android:name="com.example.user.myapplication.TemperaturePage" />
+        <activity
+            android:name="com.example.user.myapplication.HomePage"
+            android:label="Smart Home" />
+        <activity
+            android:name="com.example.user.myapplication.LightPage"
+            android:label="Lights" />
+        <activity
+            android:name="com.example.user.myapplication.CameraPage"
+            android:label="Camera" />
+        <activity
+            android:name="com.example.user.myapplication.SensorsPage"
+            android:label="Sensors" />
+        <activity
+            android:name="com.example.user.myapplication.TemperaturePage"
+            android:label="ThermoControler" />
         <activity
             android:name="com.example.user.myapplication.Custom"
             android:theme="@style/dialog" />
         <activity android:name="com.example.user.myapplication.BaseActivity" />
-        <activity android:name="com.example.user.myapplication.MainActivity" />
+        <activity
+            android:name="com.example.user.myapplication.MainActivity"
+            android:label="Welcome to Smart Home"
+            android:windowSoftInputMode="adjustPan" />
 
         <meta-data
             android:name="android.support.VERSION"
